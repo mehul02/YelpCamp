@@ -18,7 +18,7 @@ mongoose.connect("mongodb://localhost/yelp_camp_v4");
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
-seedDB();
+// seedDB();
 
 app.use(require("express-session")({
     secret: "Once again rusty wins cutest dog!",
@@ -38,8 +38,8 @@ app.use(function(req,res,next){
 })
 
 app.use(indexRoutes);
-app.use(commentRoutes);
-app.use(campgroundRoutes);
+app.use(commentRoutes);  
+app.use(campgroundRoutes);  // app.use("/campgrounds", campgroundRoutes) so all routes in campgrounds is appended with /campgrounds automatically cleaning video 244
 
 app.listen(3000,function(){
     console.log("YelpCamp has started")
