@@ -48,6 +48,7 @@ app.use(indexRoutes);
 app.use(commentRoutes);  
 app.use(campgroundRoutes);  // app.use("/campgrounds", campgroundRoutes) so all routes in campgrounds is appended with /campgrounds automatically cleaning video 244
 
-app.listen(3000,function(){
-    console.log("YelpCamp has started")
-})
+// app.listen(3000,function(){
+//     console.log("YelpCamp has started")
+// })
+app.listen(process.env.PORT||8000);
